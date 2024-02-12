@@ -1,3 +1,19 @@
 {
+  "compilerOptions": {
+    "target": "ESNext",
+    "isolatedModules": true,
+    "noEmit": true,
+    "baseUrl": "/home/mikoto/kurosaki",
+    "paths": {
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
   "extends": "astro/tsconfigs/strict"
 }

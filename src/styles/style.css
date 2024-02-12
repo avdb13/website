@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "grotesk";
+  src: url("/fonts/grotesk-st-regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "grotesk";
+  src: url("/fonts/grotesk-st-medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "grotesk";
+  src: url("/fonts/grotesk-st-semibold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "grotesk";
+  src: url("/fonts/grotesk-st-bold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "grotesk-cn";
+  src: url("/fonts/grotesk-cn-regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "grotesk-cn";
+  src: url("/fonts/grotesk-cn-medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "grotesk-cn";
+  src: url("/fonts/grotesk-cn-semibold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "grotesk-cn";
+  src: url("/fonts/grotesk-cn-bold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "grotesk-wd";
+  src: url("/fonts/grotesk-wd-regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "grotesk-wd";
+  src: url("/fonts/grotesk-wd-medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "grotesk-wd";
+  src: url("/fonts/grotesk-wd-semibold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "grotesk-wd";
+  src: url("/fonts/grotesk-wd-bold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Cracked-Code";
+  src: url("/fonts/CrackedCode.ttf");
+}
+
+/* @font-face { */
+/*   font-family: "PalanquinDark"; */
+/*   src: url("/fonts/PalanquinDark-Medium.ttf"); */
+/*   font-weight: medium; */
+/* } */
+
+/* @font-face { */
+/*   font-family: "PalanquinDark"; */
+/*   src: url("/fonts/PalanquinDark-Semibold.ttf"); */
+/*   font-weight: 600; */
+/* } */
+
+/* @font-face { */
+/*   font-family: "PalanquinDark"; */
+/*   src: url("/fonts/PalanquinDark-Bold.ttf"); */
+/*   font-weight: bold; */
+/* } */
+
+@layer components {
+  .center {
+    @apply flex justify-center items-center;
+  }
+
+  body {
+    @apply max-w-[60em] mx-auto flex flex-col my-16 bg-dark text-stone-200;
+  }
+
+  main {
+    @apply flex flex-col grow bg-gradient-to-b from-[#FFF2] to-[#FFF1] bg-opacity-10  px-8 py-8 m-2 rounded-md;
+  }
+
+  header,
+  footer {
+    @apply flex items-center justify-between h-32 border-8 border-orange-400 m-2 p-2;
+  }
+
+  #logo {
+    @apply uppercase text-2xl border-2 border-orange-400 m-0;
+  }
+
+  #name-container {
+    @apply p-8 border-8 border-violet-200;
+  }
+
+  .ascii {
+    @apply font-base;
+  }
+
+  .button-wrapper {
+    @apply w-28 center;
+  }
+
+  .theme-button {
+    @apply h-8 w-8 rounded border-2 border-black dark:border-white fill-current;
+  }
+
+  #navbar {
+    @apply flex flex-col font-cn [&>*:nth-child(even)]:border-secondary [&>*:nth-child(odd)]:border-stone-200 w-40;
+  }
+
+  #filter {
+    @apply backdrop-blur-md;
+  }
+
+  h1 {
+    @apply text-5xl font-bold;
+  }
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+  p {
+    @apply text-base font-normal font-cn;
+  }
+
+  #frame {
+    background-image: linear-gradient(0deg, #e4d5cd88 1%, #ff000000 99%);
+  }
+
+  .navbar-li {
+    @apply center border-x-4 basis-auto px-4 py-2 bg-stone-200 bg-opacity-10 font-medium capitalize drop-shadow-[0_0_2px_rgba(0,0,0,0.5)] flex-1;
+  }
+
+  .text-shadow {
+    @apply drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)];
+  }
+
+  .footer-icons {
+    @apply dark:text-light flex items-center border border-dark dark:border-light p-4 rounded-lg justify-center;
+  }
+
+  .frame-shadow {
+    @apply drop-shadow-[0_4px_4px_rgb(0_0_0_/_0.5)];
+  }
+
+  a {
+    @apply underline underline-offset-2;
+  }
+}
+
+@layer utilities {
+  #bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    /* z-index: 10; */
+    background-size: 100% 100%;
+    background-position:
+      0px 0px,
+      0px 0px,
+      0px 0px,
+      0px 0px,
+      0px 0px;
+    background: repeating-conic-gradient(
+        from 0deg at 17% -2%,
+        #ffffffff 3%,
+        #ff00001c 99%
+      ),
+      repeating-conic-gradient(
+        from 0deg at 50% 0%,
+        #ffffff00 0%,
+        #d9ffcdff 100%
+      );
+    mask:
+      radial-gradient(circle at 50% 50%, white 1px, transparent 1px) 50% 50% /
+        20px 20px,
+      url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px
+        256px;
+    mask-composite: intersect;
+    animation: flicker 30s infinite linear;
+    filter: blur(128px);
+  }
+
+  .button {
+    position: relative;
+    padding: 4px;
+    display: block;
+    text-decoration: none;
+    transition: all .3s cubic-bezier(.2, 0, 0, 1);
+    z-index: 1;
+  }
+
+  .button::after {
+    content: '';
+    background-color: #FFF;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    /* left: -4em; */
+    transition: all .3s cubic-bezier(.2, 0, 0, 1);
+    transform-origin: bottom center;
+    z-index: -1;
+  }
+
+  .button:hover {
+    color: #000;
+    transform: scale(110%);
+  }
+
+  .button:hover::after {
+    height: 100%;
+    width: 120%;
+    right: -10%;
+  }
+
+  @keyframes flicker {
+    to {
+      mask-position:
+        50% 50%,
+        0 50%;
+    }
+  }
+
+  .frame {
+    border-image: linear-gradient(to top, #f2b56b, #FFF) 1;
+  }
+
+  .frame-2 {
+    border-image: linear-gradient(to top, #f28d6b, #f2b56b) 1;
+  }
+
+  .frame-3 {
+    border-image: linear-gradient(to top, #FFF, #f28d6b) 1;
+  }
+}
